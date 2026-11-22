@@ -8,7 +8,9 @@ student and faculty records, courses, attendance, notices, and a
 dashboard with summary statistics.
 
 **Live application:** https://campus-connect-swart-omega.vercel.app/\
+
 **Backend service:** https://campus-connect-0hr7.onrender.com\
+
 **Source code:** https://github.com/mohammed-saqeeb1312/Campus-Connect
 
 ## Features
