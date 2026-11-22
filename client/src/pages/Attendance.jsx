@@ -32,9 +32,9 @@ function Attendance() {
 
     // Backend API URLs
     
-const STUDENT_API = "http://localhost:5000/api/students?page=1&limit=100";
+const STUDENT_API = "https://campus-connect-0hr7.onrender.com/api/students?page=1&limit=100";
 
-    const ATTENDANCE_API = "http://localhost:5000/api/attendance";
+    const ATTENDANCE_API = "https://campus-connect-0hr7.onrender.com/api/attendance";
 
     // Get JWT token from localStorage
     const getToken = () => localStorage.getItem("token");

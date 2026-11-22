@@ -48,7 +48,7 @@ function Students() {
     const [totalPages, setTotalPages] = useState(1);
 
     // Backend API URL
-    const API_URL = "http://localhost:5000/api/students";
+    const API_URL = "https://campus-connect-0hr7.onrender.com/api/students";
 
     // Fetch students using search, filters and pagination
     const fetchStudents = async () => {

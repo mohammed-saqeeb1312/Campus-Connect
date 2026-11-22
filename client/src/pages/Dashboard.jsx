@@ -45,7 +45,7 @@ function Dashboard() {
 
             // Call dashboard statistics API
             const response = await fetch(
-                `http://localhost:5000/api/dashboard/stats?date=${getTodayDate()}`,
+                `https://campus-connect-0hr7.onrender.com/api/dashboard/stats?date=${getTodayDate()}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

@@ -25,7 +25,7 @@ function Courses() {
         semester: ""
     });
 
-    const API_URL = "http://localhost:5000/api/courses";
+    const API_URL = "https://campus-connect-0hr7.onrender.com/api/courses";
 
     // 6. Fetch courses from MongoDB
     const fetchCourses = async () => {

@@ -26,7 +26,7 @@ function Faculty() {
         designation: ""
     });
 
-    const API_URL = "http://localhost:5000/api/faculty";
+    const API_URL = "https://campus-connect-0hr7.onrender.com/api/faculty";
 
     // 6. Fetch faculty records from MongoDB
     const fetchFaculty = async () => {

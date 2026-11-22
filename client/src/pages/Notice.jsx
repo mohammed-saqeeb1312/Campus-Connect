@@ -26,7 +26,7 @@ function Notices() {
         status: "Published"
     });
 
-    const API_URL = "http://localhost:5000/api/notices";
+    const API_URL = "https://campus-connect-0hr7.onrender.com/api/notices";
 
     // Get Admin JWT token
     const getToken = () => localStorage.getItem("token");
