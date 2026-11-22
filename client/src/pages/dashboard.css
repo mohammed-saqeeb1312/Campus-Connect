@@ -1,0 +1,609 @@
+
+/* ==========================================
+   COLLEGE CONNECT - ELITE ADMIN DASHBOARD
+   Premium UI | Responsive | Animated
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #2458d3;
+    --primary-dark: #102c61;
+    --text-dark: #101c38;
+    --text-muted: #71809c;
+    --border: #e5ebf5;
+    --surface: #ffffff;
+    --background: #f3f6fc;
+    --success: #10b981;
+    --danger: #ef4444;
+    --purple: #8b5cf6;
+    --orange: #f97316;
+}
+
+/* ==========================================
+   MAIN DASHBOARD
+========================================== */
+
+.content {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(circle at 10% 5%, #e5edff 0, transparent 30%),
+        radial-gradient(circle at 95% 90%, #e7edff 0, transparent 30%),
+        var(--background);
+
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+}
+
+/* ==========================================
+   DASHBOARD HEADING
+========================================== */
+
+.page-heading {
+    position: relative;
+    overflow: hidden;
+
+    padding: 32px 36px;
+    margin-bottom: 28px;
+
+    background: linear-gradient(
+        115deg,
+        #ffffff 0%,
+        #edf3ff 55%,
+        #dce9ff 100%
+    );
+
+    border: 1px solid #d9e5ff;
+    border-radius: 22px;
+
+    box-shadow: 0 10px 30px rgba(35, 75, 150, 0.07);
+
+    animation: slideUp .6s ease;
+}
+
+.page-heading::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    right: 8%;
+    top: -130px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, .08);
+}
+
+.page-heading::after {
+    content: "🎓";
+    position: absolute;
+    right: 55px;
+    bottom: 5px;
+    font-size: 105px;
+    opacity: .14;
+}
+
+.page-heading h1 {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 12px;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    letter-spacing: -1.3px;
+    color: #10234b;
+}
+
+.page-heading p {
+    position: relative;
+    z-index: 1;
+
+    margin: 0;
+    color: #62718d;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ==========================================
+   STATISTICS GRID
+========================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+/* ==========================================
+   STATISTIC CARDS
+========================================== */
+
+.stat-card {
+    --card-color: #2563eb;
+    --card-light: #e8f0ff;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-height: 155px;
+    padding: 23px 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, .94);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: 0 6px 22px rgba(31, 55, 100, .055);
+
+    transition: transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+
+    box-sizing: border-box;
+}
+
+.stat-card:nth-child(1) {
+    --card-color: #2563eb;
+    --card-light: #e5efff;
+}
+
+.stat-card:nth-child(2) {
+    --card-color: #8b5cf6;
+    --card-light: #f0eaff;
+}
+
+.stat-card:nth-child(3) {
+    --card-color: #10b981;
+    --card-light: #dcf8ec;
+}
+
+.stat-card:nth-child(4) {
+    --card-color: #f97316;
+    --card-light: #fff0e3;
+}
+
+.stat-card:nth-child(5) {
+    --card-color: #06b6d4;
+    --card-light: #ddf8fc;
+}
+
+/* Card Background Decoration */
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 115px;
+    height: 115px;
+
+    right: -40px;
+    top: -40px;
+
+    border-radius: 50%;
+    background: var(--card-light);
+
+    transition: transform .4s ease;
+}
+
+/* Bottom Animated Bar */
+
+.stat-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        var(--card-color),
+        var(--card-light)
+    );
+
+    transform: scaleX(.65);
+    transform-origin: left;
+
+    transition: transform .4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--card-color);
+
+    box-shadow: 0 16px 35px rgba(35, 75, 150, .12);
+}
+
+.stat-card:hover::before {
+    transform: scale(1.4);
+}
+
+.stat-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* Card Content */
+
+.stat-card > div {
+    position: relative;
+    z-index: 2;
+}
+
+.stat-card p {
+    margin: 0 0 12px;
+
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stat-card h2 {
+    margin: 0;
+
+    color: #111d3a;
+    font-size: clamp(24px, 2vw, 32px);
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+/* Card Icons */
+
+.stat-card {
+    font-size: 34px;
+}
+
+/* ==========================================
+   ATTENDANCE SUMMARY SECTION
+========================================== */
+
+.students-section {
+    position: relative;
+
+    padding: 27px;
+    margin-top: 25px;
+
+    background: rgba(255, 255, 255, .95);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    box-shadow: 0 8px 28px rgba(31, 55, 100, .055);
+}
+
+.students-section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 25px;
+    padding-bottom: 19px;
+
+    color: #122143;
+    font-size: 21px;
+    font-weight: 800;
+
+    border-bottom: 1px solid #edf0f7;
+}
+
+/* Attendance Cards */
+
+.students-section .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 0;
+}
+
+.students-section .stat-card {
+    min-height: 135px;
+    background: #fbfcff;
+}
+
+/* Attendance Card Colors */
+
+.students-section .stat-card:nth-child(1) {
+    --card-color: #10b981;
+    --card-light: #d9f8e9;
+}
+
+.students-section .stat-card:nth-child(2) {
+    --card-color: #ef4444;
+    --card-light: #ffe5e5;
+}
+
+.students-section .stat-card:nth-child(3) {
+    --card-color: #2563eb;
+    --card-light: #e3edff;
+}
+
+/* ==========================================
+   OPTIONAL PROGRESS BARS
+   Use these classes in JSX
+========================================== */
+
+.progress-wrapper {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.progress-track {
+    width: 100%;
+    height: 9px;
+
+    overflow: hidden;
+    background: #e9eef8;
+    border-radius: 20px;
+}
+
+.progress-fill {
+    display: block;
+    height: 100%;
+
+    width: var(--progress, 0%);
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    border-radius: 20px;
+
+    animation: growBar 1.2s ease both;
+}
+
+.progress-fill.green {
+    background: linear-gradient(90deg, #059669, #34d399);
+}
+
+.progress-fill.purple {
+    background: linear-gradient(90deg, #7c3aed, #c084fc);
+}
+
+.progress-fill.orange {
+    background: linear-gradient(90deg, #ea580c, #fb923c);
+}
+
+.progress-fill.red {
+    background: linear-gradient(90deg, #dc2626, #fb7185);
+}
+
+/* ==========================================
+   MINI BAR CHART
+   Optional reusable chart component
+========================================== */
+
+.mini-bars {
+    height: 48px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.mini-bars span {
+    flex: 1;
+    height: var(--bar-height, 40%);
+    min-width: 5px;
+
+    background: linear-gradient(
+        180deg,
+        #60a5fa,
+        #2563eb
+    );
+
+    border-radius: 5px 5px 2px 2px;
+
+    transition: height .4s ease;
+}
+
+.mini-bars span:hover {
+    filter: brightness(1.15);
+}
+
+/* ==========================================
+   LOADING STATE
+========================================== */
+
+.content > p:not(.error-message) {
+    padding: 25px;
+    margin: 20px 0;
+
+    color: var(--primary);
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ==========================================
+   ERROR STATE
+========================================== */
+
+.error-message {
+    padding: 17px 20px;
+    margin: 20px 0;
+
+    color: #dc2626;
+    background: #fff1f2;
+
+    border: 1px solid #fecdd3;
+    border-left: 5px solid #ef4444;
+    border-radius: 13px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes growBar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--progress, 0%);
+    }
+}
+
+.page-heading,
+.stat-card,
+.students-section {
+    animation: slideUp .65s ease both;
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: .05s;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: .10s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: .15s;
+}
+
+.stat-card:nth-child(4) {
+    animation-delay: .20s;
+}
+
+.stat-card:nth-child(5) {
+    animation-delay: .25s;
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .content {
+        padding: 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .content {
+        padding: 14px;
+    }
+
+    .page-heading {
+        padding: 24px 20px;
+        border-radius: 17px;
+    }
+
+    .page-heading h1 {
+        font-size: 23px;
+    }
+
+    .page-heading p {
+        max-width: 80%;
+        font-size: 13px;
+    }
+
+    .page-heading::after {
+        right: 15px;
+        font-size: 55px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card {
+        min-height: 125px;
+        padding: 18px 13px 24px;
+        border-radius: 15px;
+        font-size: 27px;
+    }
+
+    .stat-card p {
+        font-size: 11px;
+    }
+
+    .stat-card h2 {
+        font-size: 24px;
+    }
+
+    .students-section {
+        padding: 18px;
+        border-radius: 17px;
+    }
+
+    .students-section > h2 {
+        font-size: 18px;
+    }
+
+    .students-section .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .students-section .stat-card {
+        min-height: 105px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-heading h1 {
+        font-size: 20px;
+    }
+
+}

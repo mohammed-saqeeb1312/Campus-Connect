@@ -1,0 +1,815 @@
+
+/* =========================================================
+   COLLEGE CONNECT - ELITE FACULTY MANAGEMENT
+   Premium ERP Design | Interactive | Responsive
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --faculty-primary: #2458d3;
+    --faculty-dark: #12377f;
+    --faculty-light: #edf3ff;
+
+    --faculty-text: #132443;
+    --faculty-muted: #75839b;
+
+    --faculty-border: #e3eaf5;
+    --faculty-white: #ffffff;
+
+    --faculty-green: #10b981;
+    --faculty-red: #ef4444;
+    --faculty-purple: #8b5cf6;
+
+    --faculty-shadow:
+        0 8px 28px rgba(25, 55, 110, .055);
+}
+
+/* =========================================================
+   MAIN FACULTY PAGE
+========================================================= */
+
+.faculty-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+
+    font-family: 'Inter', sans-serif;
+    color: var(--faculty-text);
+
+    background:
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(59, 130, 246, .09),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(139, 92, 246, .06),
+            transparent 30%
+        ),
+        #f3f6fc;
+}
+
+/* =========================================================
+   FACULTY PAGE HEADER
+========================================================= */
+
+.faculty-page .student-heading {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    min-height: 145px;
+    padding: 30px 35px;
+    margin-bottom: 26px;
+
+    background: linear-gradient(
+        115deg,
+        #ffffff 0%,
+        #edf3ff 55%,
+        #dce8ff 100%
+    );
+
+    border: 1px solid #d9e5fa;
+    border-radius: 22px;
+
+    box-shadow: var(--faculty-shadow);
+
+    animation: facultyEnter .6s ease both;
+}
+
+.faculty-page .student-heading::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 250px;
+    height: 250px;
+
+    right: 8%;
+    top: -140px;
+
+    background: rgba(37, 99, 235, .08);
+    border-radius: 50%;
+}
+
+.faculty-page .student-heading::after {
+    content: "👨‍🏫";
+    position: absolute;
+    z-index: -1;
+
+    right: 220px;
+    bottom: -25px;
+
+    font-size: 105px;
+    opacity: .12;
+
+    pointer-events: none;
+}
+
+.faculty-page .student-heading > div {
+    position: relative;
+    z-index: 2;
+}
+
+.faculty-page .student-heading h1 {
+    margin: 0 0 11px;
+
+    color: #10234b;
+
+    font-size: clamp(25px, 3vw, 33px);
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+.faculty-page .student-heading p {
+    margin: 0;
+
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   ADD FACULTY BUTTON
+========================================================= */
+
+.faculty-page .add-student-btn {
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 15px 25px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #3475f5,
+        #1743a9
+    );
+
+    border: none;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 19px rgba(37, 99, 235, .25);
+
+    transition: all .3s ease;
+}
+
+.faculty-page .add-student-btn::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 75%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: left .5s ease;
+}
+
+.faculty-page .add-student-btn:hover {
+    transform: translateY(-4px);
+
+    background: linear-gradient(
+        135deg,
+        #1743a9,
+        #102e75
+    );
+
+    box-shadow:
+        0 13px 27px rgba(37, 99, 235, .30);
+}
+
+.faculty-page .add-student-btn:hover::before {
+    left: 130%;
+}
+
+.faculty-page .add-student-btn:active {
+    transform: scale(.97);
+}
+
+/* =========================================================
+   ADD / EDIT FACULTY FORM
+========================================================= */
+
+.faculty-page .student-form {
+    position: relative;
+
+    padding: 30px;
+    margin-bottom: 26px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe8f8;
+    border-radius: 21px;
+
+    box-shadow:
+        0 12px 35px rgba(35, 75, 150, .09);
+
+    animation: facultyForm .4s ease both;
+}
+
+/* Form Heading */
+
+.faculty-page .student-form h2 {
+    margin: 0 0 25px;
+    padding-bottom: 18px;
+
+    color: #14264a;
+
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+
+    border-bottom: 1px solid #edf1f8;
+}
+
+/* Form Grid */
+
+.faculty-page .form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 19px;
+}
+
+/* Form Inputs */
+
+.faculty-page .form-grid input,
+.faculty-page .form-grid select {
+    width: 100%;
+    height: 53px;
+
+    padding: 0 17px;
+
+    color: #263954;
+    background: #f8faff;
+
+    border: 1px solid #e1e8f4;
+    border-radius: 11px;
+
+    outline: none;
+    box-sizing: border-box;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: all .25s ease;
+}
+
+.faculty-page .form-grid input::placeholder {
+    color: #9aa7ba;
+}
+
+/* Input Focus */
+
+.faculty-page .form-grid input:focus,
+.faculty-page .form-grid select:focus {
+    background: #ffffff;
+
+    border-color: #3973e9;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, .10),
+        0 5px 12px rgba(37, 99, 235, .04);
+
+    transform: translateY(-2px);
+}
+
+.faculty-page .form-grid select {
+    cursor: pointer;
+}
+
+/* =========================================================
+   FORM ACTION BUTTONS
+========================================================= */
+
+.faculty-page .form-actions {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-top: 27px;
+}
+
+.faculty-page .form-actions button {
+    min-width: 155px;
+
+    padding: 14px 23px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #3475f5,
+        #1743a9
+    );
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.faculty-page .form-actions button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(37, 99, 235, .24);
+}
+
+.faculty-page .form-actions button:active {
+    transform: scale(.97);
+}
+
+/* Cancel Button */
+
+.faculty-page .form-actions .cancel-btn {
+    color: #64748b;
+    background: #f1f5f9;
+
+    border: 1px solid #e2e8f0;
+}
+
+.faculty-page .form-actions .cancel-btn:hover {
+    color: #dc2626;
+    background: #fff1f2;
+
+    border-color: #fecaca;
+    box-shadow: none;
+}
+
+/* =========================================================
+   FACULTY DIRECTORY SECTION
+========================================================= */
+
+.faculty-page .students-section {
+    padding: 28px;
+
+    background: rgba(255,255,255,.97);
+
+    border: 1px solid var(--faculty-border);
+    border-radius: 21px;
+
+    box-shadow: var(--faculty-shadow);
+
+    animation: facultyEnter .7s ease both;
+}
+
+/* Section Title */
+
+.faculty-page .students-section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 22px;
+
+    color: #14264a;
+
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -.6px;
+}
+
+.faculty-page .students-section > h2::before {
+    content: "";
+    width: 5px;
+    height: 25px;
+
+    background: linear-gradient(
+        180deg,
+        #3475f5,
+        #1743a9
+    );
+
+    border-radius: 10px;
+}
+
+/* =========================================================
+   FACULTY TABLE WRAPPER
+========================================================= */
+
+.faculty-page .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e6ecf5;
+    border-radius: 15px;
+}
+
+/* Scrollbar */
+
+.faculty-page .table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.faculty-page .table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.faculty-page .table-wrapper::-webkit-scrollbar-thumb {
+    background: #bdcce5;
+    border-radius: 10px;
+}
+
+.faculty-page .table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #8ca8d5;
+}
+
+/* Table */
+
+.faculty-page table {
+    width: 100%;
+    min-width: 900px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: #ffffff;
+}
+
+/* Table Header */
+
+.faculty-page table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    background: #edf3ff;
+}
+
+.faculty-page table th {
+    padding: 18px 16px;
+
+    color: #274779;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .5px;
+
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    border-bottom: 1px solid #dce6f6;
+}
+
+/* Table Body */
+
+.faculty-page table td {
+    padding: 18px 16px;
+
+    color: #485873;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid #edf1f7;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.faculty-page table tbody tr {
+    background: #ffffff;
+
+    transition: background .25s ease;
+}
+
+.faculty-page table tbody tr:nth-child(even) {
+    background: #fcfdff;
+}
+
+.faculty-page table tbody tr:hover {
+    background: #f1f6ff;
+}
+
+.faculty-page table tbody tr:hover td {
+    color: #1c417f;
+}
+
+.faculty-page table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Department Column */
+
+.faculty-page table tbody td:nth-child(5) {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* Designation Column */
+
+.faculty-page table tbody td:nth-child(6) {
+    color: #7045c7;
+    font-weight: 700;
+}
+
+/* Empty State */
+
+.faculty-page table td[colspan] {
+    padding: 55px 20px;
+
+    color: #8997ad;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* =========================================================
+   EDIT FACULTY BUTTON
+========================================================= */
+
+.faculty-page .edit-btn {
+    padding: 9px 16px;
+    margin-right: 7px;
+
+    color: #2563eb;
+    background: #edf3ff;
+
+    border: 1px solid #d7e4ff;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.faculty-page .edit-btn:hover {
+    color: #ffffff;
+    background: #2563eb;
+    border-color: #2563eb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 13px rgba(37, 99, 235, .20);
+}
+
+/* =========================================================
+   DELETE FACULTY BUTTON
+========================================================= */
+
+.faculty-page .delete-btn {
+    padding: 9px 15px;
+
+    color: #dc2626;
+    background: #fff1f1;
+
+    border: 1px solid #ffdddd;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.faculty-page .delete-btn:hover {
+    color: #ffffff;
+    background: #dc2626;
+    border-color: #dc2626;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 13px rgba(220, 38, 38, .18);
+}
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+.faculty-page .students-section > p:not(.error-message) {
+    padding: 24px;
+
+    color: #2563eb;
+    background: #f2f6ff;
+
+    border: 1px solid #e0eaff;
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.faculty-page .error-message {
+    padding: 16px 19px;
+
+    color: #dc2626;
+    background: #fff1f2;
+
+    border: 1px solid #fecdd3;
+    border-left: 5px solid #ef4444;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes facultyEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes facultyForm {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .faculty-page {
+        padding: 22px;
+    }
+
+    .faculty-page .student-heading::after {
+        right: 130px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .faculty-page {
+        padding: 14px;
+    }
+
+    .faculty-page .student-heading {
+        align-items: flex-start;
+        flex-direction: column;
+
+        padding: 24px 20px;
+        border-radius: 17px;
+    }
+
+    .faculty-page .student-heading h1 {
+        font-size: 23px;
+    }
+
+    .faculty-page .student-heading p {
+        font-size: 12px;
+    }
+
+    .faculty-page .student-heading::after {
+        right: 15px;
+        font-size: 65px;
+    }
+
+    .faculty-page .add-student-btn {
+        width: 100%;
+    }
+
+    .faculty-page .student-form {
+        padding: 20px;
+    }
+
+    .faculty-page .student-form h2 {
+        font-size: 19px;
+    }
+
+    .faculty-page .form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .faculty-page .form-actions {
+        flex-direction: column;
+    }
+
+    .faculty-page .form-actions button {
+        width: 100%;
+    }
+
+    .faculty-page .students-section {
+        padding: 18px;
+        border-radius: 17px;
+    }
+
+    .faculty-page .students-section > h2 {
+        font-size: 19px;
+    }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .faculty-page {
+        padding: 10px;
+    }
+
+    .faculty-page .student-heading h1 {
+        font-size: 20px;
+    }
+
+    .faculty-page .student-form h2 {
+        font-size: 18px;
+    }
+
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faculty-page *,
+    .faculty-page *::before,
+    .faculty-page *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+}

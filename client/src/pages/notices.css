@@ -1,0 +1,461 @@
+
+/* =========================================
+   COLLEGE CONNECT - NOTICES MANAGEMENT
+   PREMIUM ADMIN DASHBOARD
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.notices-page {
+    --primary: #315bea;
+    --primary-dark: #2345c5;
+    --navy: #172554;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e5eaf3;
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f3f6ff, #f8faff 55%, #eef3ff);
+    box-sizing: border-box;
+}
+
+.notices-page * {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.notices-page .student-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 32px;
+    margin-bottom: 26px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #172554, #315bea 75%, #5479f5);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(49, 91, 234, 0.18);
+    position: relative;
+    overflow: hidden;
+}
+
+.notices-page .student-heading::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: 10%;
+    top: -140px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.09);
+    pointer-events: none;
+}
+
+.notices-page .student-heading h1 {
+    margin: 0 0 9px;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.notices-page .student-heading p {
+    margin: 0;
+    color: #dbe5ff;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.notices-page .student-heading button {
+    position: relative;
+    z-index: 1;
+    padding: 13px 21px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 11px;
+    background: #fff;
+    color: #2345c5;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+    transition: all 0.25s ease;
+}
+
+.notices-page .student-heading button:hover {
+    transform: translateY(-3px);
+    background: #eaf0ff;
+    box-shadow: 0 9px 20px rgba(0,0,0,0.18);
+}
+
+/* =========================================
+   MAIN CONTENT CARDS
+========================================= */
+
+.notices-page .students-section {
+    padding: 26px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(31,55,110,0.05);
+}
+
+.notices-page .students-section h2 {
+    margin: 0 0 23px;
+    color: var(--navy);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+/* =========================================
+   NOTICE FORM
+========================================= */
+
+.notices-page .students-section form {
+    width: 100%;
+}
+
+.notices-page .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px;
+    margin-bottom: 23px;
+}
+
+.notices-page .form-grid input,
+.notices-page .form-grid select,
+.notices-page .form-grid textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 15px;
+    border: 1px solid #dce4f1;
+    border-radius: 10px;
+    outline: none;
+    background: #f8faff;
+    color: #334155;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.notices-page .form-grid input::placeholder,
+.notices-page .form-grid textarea::placeholder {
+    color: #94a3b8;
+}
+
+.notices-page .form-grid input:hover,
+.notices-page .form-grid select:hover,
+.notices-page .form-grid textarea:hover {
+    border-color: #a9baff;
+    background: #fff;
+}
+
+.notices-page .form-grid input:focus,
+.notices-page .form-grid select:focus,
+.notices-page .form-grid textarea:focus {
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(49,91,234,0.09);
+}
+
+.notices-page .form-grid textarea {
+    grid-column: 1 / -1;
+    min-height: 125px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.notices-page .form-grid label {
+    align-self: end;
+    margin-bottom: -12px;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.notices-page .form-grid input[type="date"] {
+    cursor: pointer;
+}
+
+.notices-page .form-grid select {
+    cursor: pointer;
+}
+
+/* =========================================
+   FORM ACTION BUTTONS
+========================================= */
+
+.notices-page .students-section form > button {
+    min-height: 44px;
+    padding: 12px 22px;
+    margin-right: 11px;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.notices-page .students-section form > button[type="submit"] {
+    background: linear-gradient(135deg, #315bea, #2345c5);
+    color: #fff;
+    box-shadow: 0 5px 13px rgba(49,91,234,0.20);
+}
+
+.notices-page .students-section form > button[type="submit"]:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2345c5, #172f9c);
+    box-shadow: 0 8px 17px rgba(49,91,234,0.25);
+}
+
+.notices-page .students-section form > button[type="button"] {
+    background: #eef2f8;
+    color: #475569;
+}
+
+.notices-page .students-section form > button[type="button"]:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* =========================================
+   NOTICE TABLE
+========================================= */
+
+.notices-page .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e7ecf5;
+    border-radius: 13px;
+}
+
+.notices-page table {
+    width: 100%;
+    min-width: 780px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+}
+
+.notices-page table thead {
+    background: #f1f5ff;
+}
+
+.notices-page table th {
+    padding: 17px 18px;
+    border-bottom: 1px solid #e2e8f5;
+    color: #334155;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+.notices-page table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #edf0f6;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.notices-page table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.notices-page table tbody tr:hover {
+    background: #f7f9ff;
+}
+
+.notices-page table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.notices-page table td:first-child {
+    color: #64748b;
+    font-weight: 700;
+}
+
+.notices-page table td:nth-child(2) {
+    color: #172554;
+    font-weight: 700;
+}
+
+/* =========================================
+   CATEGORY AND STATUS VISUALS
+========================================= */
+
+.notices-page table td:nth-child(3) {
+    color: #315bea;
+    font-weight: 700;
+}
+
+.notices-page table td:nth-child(5) {
+    font-weight: 700;
+}
+
+/* =========================================
+   EDIT AND DELETE BUTTONS
+========================================= */
+
+.notices-page table td button {
+    min-width: 68px;
+    padding: 9px 13px;
+    margin: 3px 5px 3px 0;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.notices-page table td button:first-child {
+    background: #eaf0ff;
+    color: #315bea;
+}
+
+.notices-page table td button:first-child:hover {
+    transform: translateY(-2px);
+    background: #315bea;
+    color: #fff;
+    box-shadow: 0 5px 12px rgba(49,91,234,0.2);
+}
+
+.notices-page table td button:last-child {
+    background: #fff0f0;
+    color: #dc4141;
+}
+
+.notices-page table td button:last-child:hover {
+    transform: translateY(-2px);
+    background: #dc4141;
+    color: #fff;
+    box-shadow: 0 5px 12px rgba(220,65,65,0.18);
+}
+
+/* =========================================
+   LOADING / ERROR / EMPTY MESSAGES
+========================================= */
+
+.notices-page .students-section > p {
+    padding: 17px;
+    margin: 10px 0 0;
+    border-radius: 10px;
+    background: #f5f7fc;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.notices-page .table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.notices-page .table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.notices-page .table-wrapper::-webkit-scrollbar-thumb {
+    background: #b7c5e5;
+    border-radius: 10px;
+}
+
+.notices-page .table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #829bd3;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 850px) {
+    .notices-page {
+        padding: 22px;
+    }
+
+    .notices-page .form-grid {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .notices-page {
+        padding: 14px;
+    }
+
+    .notices-page .student-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 23px 20px;
+        border-radius: 15px;
+    }
+
+    .notices-page .student-heading h1 {
+        font-size: 21px;
+    }
+
+    .notices-page .student-heading p {
+        font-size: 12px;
+    }
+
+    .notices-page .student-heading button {
+        width: 100%;
+    }
+
+    .notices-page .students-section {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .notices-page .students-section h2 {
+        font-size: 17px;
+    }
+
+    .notices-page .form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .notices-page .form-grid textarea {
+        grid-column: auto;
+    }
+
+    .notices-page .students-section form > button {
+        margin-bottom: 8px;
+    }
+
+    .notices-page .students-section form > button[type="submit"],
+    .notices-page .students-section form > button[type="button"] {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .notices-page *,
+    .notices-page *::before,
+    .notices-page *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
