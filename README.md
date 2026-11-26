@@ -137,20 +137,25 @@ private database values.
 
 ## Screenshots
 
-Add approved screenshots to `docs/screenshots/` and link them here.
-Suggested images:
+## Screenshots
 
-1.  `login.png` -- login page, with no credentials visible.
-2.  `dashboard.png` -- dashboard with sample or anonymised data.
-3.  `students.png` -- student management page.
-4.  `faculty.png` -- faculty management page.
-5.  `courses.png` -- course management page.
-6.  `attendance.png` -- attendance page.
-7.  `notices.png` -- notice management page.
-8.  `postman-students-get.png` -- successful GET request and response.
-9.  `postman-students-post.png` -- successful POST request and response.
-10. `postman-auth-login.png` -- successful login response, with the
-    token hidden.
+### Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Students Management
+![Students](docs/screenshots/students.png)
+
+### Faculty Management
+![Faculty](docs/screenshots/faculty.png)
+
+### Attendance Management
+![Attendance](docs/screenshots/attendance.png)
+
+### Postman Login API
+![Postman Login](docs/screenshots/postman-login.png)
+
+### Postman Students GET API
+![Postman Students GET](docs/screenshots/postman-students-get.png)
 
 Example image link after adding a screenshot:
 
