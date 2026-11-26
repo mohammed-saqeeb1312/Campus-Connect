@@ -157,12 +157,6 @@ private database values.
 ### Postman Students GET API
 ![Postman Students GET](docs/screenshots/postman-students-get.png)
 
-Example image link after adding a screenshot:
-
-``` md
-![CampusConnect dashboard](docs/screenshots/dashboard.png)
-```
-
 ## Testing checklist
 
 Before sharing a release, test: - Admin login and logout - Dashboard
