@@ -44,5 +44,5 @@ const studentSchema = new mongoose.Schema({
 const Student = mongoose.model("Student", studentSchema);
 
 // Model ko export kar rahe hain
-// Taaki controller mein use kar sakein
+//  TAAKI YHAN SE controller mein use kar sakein
 module.exports = Student;
